@@ -8,9 +8,7 @@
           [appareilStatus]="appareil.status"></app-appareil>
         </ul>
       <button class="btn btn-success" [disabled]="!isAuth" (click)="onAllumer()">Tout allumer</button>
-      <p>Mis à jour : {{ lastUpdate | date: 'short' | uppercase }}</p>
-      <p>Mis à jour : {{ lastUpdate | date: 'yMMMMEEEEd' }}</p> 
-      <!-- Display this format : YEAR_MONTH_WEEKDAY_DAY for more : https://pub.dev/documentation/intl/latest/intl/DateFormat-class.html -->
+      <p>Mis à jour : {{ lastUpdate | async | date: 'short' | uppercase }}</p>
     </div>
   </div>
 </div>

@@ -3,13 +3,15 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { AppareilComponent } from './appareil/appareil.component';
+import { PostListComponent } from './post-list/post-list.component';
+import { PostListItemComponent } from './post-list-item/post-list-item.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppareilComponent
+    PostListComponent,
+    PostListItemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+<ul>
+    <li [ngClass]="{'list-group-item': true,
+                    'list-group-item-success': itemLoveIts > 0,
+                    'list-group-item-danger': itemLoveIts < 0}">
+        <div style="display: flex; justify-content: space-between;">
+            <h3 [ngStyle]="{color: getColor()}"> {{ itemTitle }} </h3>
+            <h3 style="vertical-align: top;">{{ lastUpdate | async | date: 'short' | uppercase }}</h3>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget arcu nec eros facilisis commodo at at velit. Mauris consectetur. </p>
+        <div class="d-grid gap-3 d-md-flex justify-content-md">
+            <button type="button" class="btn btn-success" (click)="addLike()">Like</button>
+            <button type="button" class="btn btn-danger" (click)="removeLike()">Dislike</button>
+            <button type="button" class="btn btn-dark" (click)="backToZeroLike()">Counter = {{ itemLoveIts }} </button>            
+        </div>
+    </li>
+</ul>

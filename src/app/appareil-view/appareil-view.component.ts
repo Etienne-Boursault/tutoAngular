@@ -41,7 +41,7 @@ export class AppareilViewComponent implements OnInit {
   }
 
   onAllumer() {
-    this.appareilService.emitAppareilSubject();
+    this.appareilService.switchOnAll();
   }
 
   onEteindre() {
@@ -49,7 +49,7 @@ export class AppareilViewComponent implements OnInit {
       this.appareilService.switchOffAll();
     } 
   }
-  
+
   ngOnDestroy() {
     this.appareilSubscription.unsubscribe;    
   }

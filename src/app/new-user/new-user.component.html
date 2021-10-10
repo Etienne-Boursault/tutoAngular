@@ -15,10 +15,10 @@
         <div class="form-group">
             <label for="drinkPreference">Quelle boisson préférez-vous ?</label>
             <select id="drinkPreference" class="form-control" formControlName="drinkPreference">
-                <option value="jus d\'orange">Jus d'orange</option>
+                <option value="jus d'orange">Jus d'orange</option>
                 <option value="jus de mangue">Jus de mangue</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Soumettre</button>
+        <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Soumettre</button>
     </form>
 </div>

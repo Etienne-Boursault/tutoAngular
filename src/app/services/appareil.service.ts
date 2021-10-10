@@ -9,19 +9,9 @@ export class AppareilService {
 
     private appareils = [
         {
-            id: 1,
-            name: 'Machine à laver',
-            status: 'éteint'
-        },
-        {
-            id: 2,
-            name: 'Frigo',
-            status: 'allumé'
-        },
-        {
-            id: 3,
-            name: 'Ordinateur',
-            status: 'éteint'
+            id: 0,
+            name: '',
+            status: ''
         }
     ];
 
@@ -88,5 +78,19 @@ export class AppareilService {
                 console.log('Erreur ! : ' + error);
             }
         );
+    }
+
+    getAppareilsFromServer() {
+        this.httpClient
+        .get<any[]>('https://tutoangular-20324-default-rtdb.europe-west1.firebasedatabase.app/appareils.json')
+        .subscribe(
+            (response) => {
+                this.appareils = response;
+                this.emitAppareilSubject();
+            },
+            (error) => {
+                console.log('Erreur ! : ' + error);
+            }
+        )
     }
 }

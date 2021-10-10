@@ -54,7 +54,11 @@ export class AppareilViewComponent implements OnInit {
     this.appareilService.saveAppareilsToServer();
   }
 
+  onFetch() {
+    this.appareilService.getAppareilsFromServer();
+  }
+
   ngOnDestroy() {
-    this.appareilSubscription.unsubscribe;    
+    this.appareilSubscription.unsubscribe();    
   }
 }
